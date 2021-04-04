@@ -1,0 +1,22 @@
+.dropdown-menu{
+    overflow-y: auto;
+    max-height: 200px;
+    overflow-x: auto;
+    max-width: 350px;
+}
+
+.wrapper{
+    height: 10%;
+}
+span{
+    display:inline-flexbox;
+    width: 50%;
+}
+
+.link{
+    cursor: poiner;
+}
+.firstname{
+    font-weight: bold;
+    margin-right: 4px;
+}

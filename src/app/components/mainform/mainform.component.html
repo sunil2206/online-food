@@ -1,0 +1,29 @@
+<div class="col col-12 alert alert-danger d-flex justify-content-center" *ngIf="errMsg">
+  {{ errMsg }}
+</div>
+<div class="container d-flex justify-content-center wrapper">
+  <form ngModel="form1" novalidate="true">
+    <div class="row d-flex justify-content-center form-wrapper mt-2">      
+        
+        <div class="col-md mb-2 form-group">
+          <input type="text" [value]="displayData" class="form-control dropdown-toggle" #location (input)="viewData(location)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="dropdown-menu" >
+            <a class="dropdown-item text-danger link" (click)="getCurrentLocation()"><i class="fas fa-map-marker-alt mr-2"></i>get current location</a>
+            <div *ngFor="let city of cityList" size="2">
+              <a class="dropdown-item" (click)="getData(city)" >{{ city }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <input type="text" class="form-control dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="dropdown-menu" >
+            <a class="dropdown-item bg-warning" *ngIf="chefListErr"> {{ chefListErr }}</a> 
+            <div *ngFor="let chef of chefList">
+              <a class="dropdown-item" ><span class="firstname">{{ (chef.firstName )}}</span> <span class="lastname">{{ (chef.lastName )}}</span></a>
+            </div>
+          </div>
+        </div>        
+     
+    </div>  
+  </form>
+</div>
